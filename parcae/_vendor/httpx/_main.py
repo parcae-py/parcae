@@ -3,8 +3,8 @@ import json
 import sys
 import typing
 
-import click
-import httpcore
+from parcae._vendor import click
+from parcae._vendor import httpcore
 import pygments.lexers
 import pygments.util
 import rich.console

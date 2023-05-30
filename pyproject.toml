@@ -1,0 +1,22 @@
+[project]
+name = "parcae"
+authors = [
+    {name = "architelos", email = "architelos.dev@proton.me"},
+    {name = "MaskDuck", email = "maskduck@duck.com"}
+]
+description = "Modernise your Python packaging experience."
+readme = "README.md"
+requires-python = ">=3.6"
+keywords = ["packaging", "manager"]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dependencies = []
+
+[tool.vendoring]
+destination = "parcae/_vendor/"
+requirements = "parcae/_vendor/vendor.txt"
+namespace = "parcae._vendor"
+
+protected-files = ["__init__.py", "vendor.txt", "README.md"]

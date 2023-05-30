@@ -19,7 +19,7 @@ import ipaddress
 import re
 import typing
 
-import idna
+from parcae._vendor import idna
 
 from ._exceptions import InvalidURL
 

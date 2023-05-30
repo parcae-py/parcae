@@ -1,7 +1,7 @@
 import typing
 from urllib.parse import parse_qs, unquote
 
-import idna
+from parcae._vendor import idna
 
 from ._types import QueryParamTypes, RawURL, URLTypes
 from ._urlparse import urlencode, urlparse

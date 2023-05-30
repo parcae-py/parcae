@@ -9,7 +9,7 @@ import typing
 from pathlib import Path
 from urllib.request import getproxies
 
-import sniffio
+from parcae._vendor import sniffio
 
 from ._types import PrimitiveData
 

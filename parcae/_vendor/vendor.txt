@@ -1,0 +1,8 @@
+httpx
+    httpcore
+        h11
+    certifi
+    idna
+    sniffio
+typer
+    click

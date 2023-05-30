@@ -1,6 +1,6 @@
 from __future__ import annotations
-from typing import TYPE_CHECKING, AnyStr
 
+from typing import TYPE_CHECKING, AnyStr
 
 if TYPE_CHECKING:
     from typing_extensions import Self
@@ -10,7 +10,5 @@ class ParcaeError(Exception):
         super().__init__(message)
 
 
-class InvalidPyPIName(ParcaeError):
+class PackageNotFound(ParcaeError):
     pass
-
-
