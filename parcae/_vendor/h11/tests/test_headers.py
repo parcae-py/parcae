@@ -2,9 +2,9 @@ import pytest
 
 from .._events import Request
 from .._headers import (
+    Headers,
     get_comma_header,
     has_expect_100_continue,
-    Headers,
     normalize_and_validate,
     set_comma_header,
 )

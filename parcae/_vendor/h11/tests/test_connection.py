@@ -1,8 +1,8 @@
-from typing import Any, cast, Dict, List, Optional, Tuple, Type
+from typing import Any, Dict, List, Optional, Tuple, Type, cast
 
 import pytest
 
-from .._connection import _body_framing, _keep_alive, Connection, NEED_DATA, PAUSED
+from .._connection import NEED_DATA, PAUSED, Connection, _body_framing, _keep_alive
 from .._events import (
     ConnectionClosed,
     Data,
@@ -594,7 +594,7 @@ def test_pipelining() -> None:
 
 
 def test_protocol_switch() -> None:
-    for (req, deny, accept) in [
+    for req, deny, accept in [
         (
             Request(
                 method="CONNECT",
@@ -721,7 +721,7 @@ def test_protocol_switch() -> None:
 def test_close_simple() -> None:
     # Just immediately closing a new connection without anything having
     # happened yet.
-    for (who_shot_first, who_shot_second) in [(CLIENT, SERVER), (SERVER, CLIENT)]:
+    for who_shot_first, who_shot_second in [(CLIENT, SERVER), (SERVER, CLIENT)]:
 
         def setup() -> ConnectionPair:
             p = ConnectionPair()

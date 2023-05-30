@@ -13,11 +13,11 @@ from .._events import (
 )
 from .._headers import Headers, normalize_and_validate
 from .._readers import (
-    _obsolete_line_fold,
+    READERS,
     ChunkedReader,
     ContentLengthReader,
     Http10Reader,
-    READERS,
+    _obsolete_line_fold,
 )
 from .._receivebuffer import ReceiveBuffer
 from .._state import (
@@ -34,13 +34,13 @@ from .._state import (
 )
 from .._util import LocalProtocolError
 from .._writers import (
+    WRITERS,
     ChunkedWriter,
     ContentLengthWriter,
     Http10Writer,
     write_any_response,
     write_headers,
     write_request,
-    WRITERS,
 )
 from .helpers import normalize_data_events
 
@@ -125,12 +125,12 @@ def tr(reader: Any, data: bytes, expected: Any) -> None:
 
 
 def test_writers_simple() -> None:
-    for ((role, state), event, binary) in SIMPLE_CASES:
+    for (role, state), event, binary in SIMPLE_CASES:
         tw(WRITERS[role, state], event, binary)
 
 
 def test_readers_simple() -> None:
-    for ((role, state), event, binary) in SIMPLE_CASES:
+    for (role, state), event, binary in SIMPLE_CASES:
         tr(READERS[role, state], binary, event)
 
 

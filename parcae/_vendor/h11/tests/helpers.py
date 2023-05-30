@@ -1,6 +1,6 @@
-from typing import cast, List, Type, Union, ValuesView
+from typing import List, Type, Union, ValuesView, cast
 
-from .._connection import Connection, NEED_DATA, PAUSED
+from .._connection import NEED_DATA, PAUSED, Connection
 from .._events import (
     ConnectionClosed,
     Data,

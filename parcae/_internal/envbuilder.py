@@ -11,7 +11,6 @@ from pathlib import Path
 from venv import EnvBuilder as BaseEnvBuilder
 
 from parcae._internal.errors import PackageNotFound
-
 from parcae._vendor import httpx
 
 
@@ -22,5 +21,7 @@ class EnvBuilder(BaseEnvBuilder):
         if response.status_code == 404:
             raise PackageNotFound(f"name {pypi_name} is not available on PyPI.")
 
-    def _install_script(self, *, install_dir: str, package_name: AnyStr, download_url: str) -> None:
-        assert (download_url.startswith("http://") or download_url.startswith("https://"))
+    def _install_script(
+        self, *, install_dir: str, package_name: AnyStr, download_url: str
+    ) -> None:
+        assert download_url.startswith("http://") or download_url.startswith("https://")

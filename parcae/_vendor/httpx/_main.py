@@ -3,8 +3,6 @@ import json
 import sys
 import typing
 
-from parcae._vendor import click
-from parcae._vendor import httpcore
 import pygments.lexers
 import pygments.util
 import rich.console
@@ -12,6 +10,8 @@ import rich.markup
 import rich.progress
 import rich.syntax
 import rich.table
+
+from parcae._vendor import click, httpcore
 
 from ._client import Client
 from ._exceptions import RequestError

@@ -9,8 +9,8 @@ from .._models import URL, Origin, Request, Response, enforce_bytes, enforce_url
 from .._ssl import default_ssl_context
 from .._synchronization import Lock
 from .._trace import Trace
-from ..backends.sync import SyncBackend
 from ..backends.base import NetworkBackend, NetworkStream
+from ..backends.sync import SyncBackend
 from .connection_pool import ConnectionPool
 from .http11 import HTTP11Connection
 from .interfaces import ConnectionInterface

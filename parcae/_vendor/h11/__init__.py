@@ -6,7 +6,7 @@
 # semantics to check that what you're asking to write to the wire is sensible,
 # but at least it gets you out of dealing with the wire itself.
 
-from parcae._vendor.h11._connection import Connection, NEED_DATA, PAUSED
+from parcae._vendor.h11._connection import NEED_DATA, PAUSED, Connection
 from parcae._vendor.h11._events import (
     ConnectionClosed,
     Data,
@@ -29,7 +29,11 @@ from parcae._vendor.h11._state import (
     SERVER,
     SWITCHED_PROTOCOL,
 )
-from parcae._vendor.h11._util import LocalProtocolError, ProtocolError, RemoteProtocolError
+from parcae._vendor.h11._util import (
+    LocalProtocolError,
+    ProtocolError,
+    RemoteProtocolError,
+)
 from parcae._vendor.h11._version import __version__
 
 PRODUCT_ID = "python-h11/" + __version__

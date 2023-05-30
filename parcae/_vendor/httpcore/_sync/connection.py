@@ -9,8 +9,8 @@ from .._models import Origin, Request, Response
 from .._ssl import default_ssl_context
 from .._synchronization import Lock
 from .._trace import Trace
-from ..backends.sync import SyncBackend
 from ..backends.base import SOCKET_OPTION, NetworkBackend, NetworkStream
+from ..backends.sync import SyncBackend
 from .http11 import HTTP11Connection
 from .interfaces import ConnectionInterface
 
@@ -122,12 +122,8 @@ class HTTPConnection(ConnectionInterface):
                         "timeout": timeout,
                         "socket_options": self._socket_options,
                     }
-                    with Trace(
-                        "connect_unix_socket", logger, request, kwargs
-                    ) as trace:
-                        stream = self._network_backend.connect_unix_socket(
-                            **kwargs
-                        )
+                    with Trace("connect_unix_socket", logger, request, kwargs) as trace:
+                        stream = self._network_backend.connect_unix_socket(**kwargs)
                         trace.return_value = stream
 
                 if self._origin.scheme == b"https":

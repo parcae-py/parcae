@@ -1,6 +1,6 @@
 # This contains the main Connection class. Everything in h11 revolves around
 # this.
-from typing import Any, Callable, cast, Dict, List, Optional, Tuple, Type, Union
+from typing import Any, Callable, Dict, List, Optional, Tuple, Type, Union, cast
 
 from ._events import (
     ConnectionClosed,
@@ -18,13 +18,13 @@ from ._state import (
     _SWITCH_CONNECT,
     _SWITCH_UPGRADE,
     CLIENT,
-    ConnectionState,
     DONE,
     ERROR,
     MIGHT_SWITCH_PROTOCOL,
     SEND_BODY,
     SERVER,
     SWITCHED_PROTOCOL,
+    ConnectionState,
 )
 from ._util import (  # Import the internal things we need
     LocalProtocolError,
@@ -56,6 +56,7 @@ class PAUSED(Sentinel, metaclass=Sentinel):
 # - IIS: 16 * 1024
 # - Apache: <8 KiB per line>
 DEFAULT_MAX_INCOMPLETE_EVENT_SIZE = 16 * 1024
+
 
 # RFC 7230's rules for connection lifecycles:
 # - If either side says they want to close the connection, then the connection
