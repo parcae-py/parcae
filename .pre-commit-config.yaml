@@ -1,0 +1,18 @@
+ci:
+  autofix_pr: true
+  autofix_commit_msg: |
+    style(pre-commit): auto fixes from pre-set hooks
+
+repos:
+  - repo: https://github.com/psf/black
+    rev: 23.3.0
+    hooks:
+      - id: black
+        name: Blacken files
+
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        args: ["--profile", "black"]
+        name: Running isort in all files.
