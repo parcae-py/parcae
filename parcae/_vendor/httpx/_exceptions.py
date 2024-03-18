@@ -30,6 +30,7 @@ Our exception hierarchy:
   x ResponseNotRead
   x RequestNotRead
 """
+
 import contextlib
 import typing
 
