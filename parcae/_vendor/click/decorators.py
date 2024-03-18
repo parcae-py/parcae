@@ -122,16 +122,14 @@ CmdType = t.TypeVar("CmdType", bound=Command)
 @t.overload
 def command(
     __func: t.Callable[..., t.Any],
-) -> Command:
-    ...
+) -> Command: ...
 
 
 @t.overload
 def command(
     name: t.Optional[str] = None,
     **attrs: t.Any,
-) -> t.Callable[..., Command]:
-    ...
+) -> t.Callable[..., Command]: ...
 
 
 @t.overload
@@ -139,8 +137,7 @@ def command(
     name: t.Optional[str] = None,
     cls: t.Type[CmdType] = ...,
     **attrs: t.Any,
-) -> t.Callable[..., CmdType]:
-    ...
+) -> t.Callable[..., CmdType]: ...
 
 
 def command(
@@ -224,16 +221,14 @@ def command(
 @t.overload
 def group(
     __func: t.Callable[..., t.Any],
-) -> Group:
-    ...
+) -> Group: ...
 
 
 @t.overload
 def group(
     name: t.Optional[str] = None,
     **attrs: t.Any,
-) -> t.Callable[[F], Group]:
-    ...
+) -> t.Callable[[F], Group]: ...
 
 
 def group(
