@@ -4,14 +4,14 @@ ci:
     style(pre-commit): auto fixes from pre-set hooks
 
 repos:
-  - repo: https://github.com/psf/black
-    rev: 23.3.0
+  - repo: https://github.com/psf/black-pre-commit-mirror
+    rev: 26.5.1
     hooks:
       - id: black
         name: Blacken files
 
   - repo: https://github.com/pycqa/isort
-    rev: 5.12.0
+    rev: 9.0.1
     hooks:
       - id: isort
         args: ["--profile", "black"]

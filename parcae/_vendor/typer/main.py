@@ -539,7 +539,7 @@ def get_command_name(name: str) -> str:
 
 
 def get_params_convertors_ctx_param_name_from_function(
-    callback: Optional[Callable[..., Any]]
+    callback: Optional[Callable[..., Any]],
 ) -> Tuple[List[Union[click.Argument, click.Option]], Dict[str, Any], Optional[str]]:
     params = []
     convertors = {}
@@ -631,7 +631,7 @@ def generate_enum_convertor(enum: Type[Enum]) -> Callable[[Any], Any]:
 
 
 def generate_list_convertor(
-    convertor: Optional[Callable[[Any], Any]]
+    convertor: Optional[Callable[[Any], Any]],
 ) -> Callable[[Sequence[Any]], List[Any]]:
     def internal_convertor(value: Sequence[Any]) -> List[Any]:
         return [convertor(v) if convertor else v for v in value]
@@ -998,7 +998,7 @@ def get_param_callback(
 
 
 def get_param_completion(
-    callback: Optional[Callable[..., Any]] = None
+    callback: Optional[Callable[..., Any]] = None,
 ) -> Optional[Callable[..., Any]]:
     if not callback:
         return None
