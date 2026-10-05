@@ -680,16 +680,18 @@ class Client(BaseClient):
             trust_env=trust_env,
         )
         self._mounts: typing.Dict[URLPattern, typing.Optional[BaseTransport]] = {
-            URLPattern(key): None
-            if proxy is None
-            else self._init_proxy_transport(
-                proxy,
-                verify=verify,
-                cert=cert,
-                http1=http1,
-                http2=http2,
-                limits=limits,
-                trust_env=trust_env,
+            URLPattern(key): (
+                None
+                if proxy is None
+                else self._init_proxy_transport(
+                    proxy,
+                    verify=verify,
+                    cert=cert,
+                    http1=http1,
+                    http2=http2,
+                    limits=limits,
+                    trust_env=trust_env,
+                )
             )
             for key, proxy in proxy_map.items()
         }
@@ -1406,16 +1408,18 @@ class AsyncClient(BaseClient):
         )
 
         self._mounts: typing.Dict[URLPattern, typing.Optional[AsyncBaseTransport]] = {
-            URLPattern(key): None
-            if proxy is None
-            else self._init_proxy_transport(
-                proxy,
-                verify=verify,
-                cert=cert,
-                http1=http1,
-                http2=http2,
-                limits=limits,
-                trust_env=trust_env,
+            URLPattern(key): (
+                None
+                if proxy is None
+                else self._init_proxy_transport(
+                    proxy,
+                    verify=verify,
+                    cert=cert,
+                    http1=http1,
+                    http2=http2,
+                    limits=limits,
+                    trust_env=trust_env,
+                )
             )
             for key, proxy in proxy_map.items()
         }
