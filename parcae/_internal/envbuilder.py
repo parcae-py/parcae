@@ -3,9 +3,10 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from typing import AnyStr
-    from typing_extensions import Self
     from types import SimpleNamespace
+    from typing import AnyStr
+
+    from typing_extensions import Self
 
 from pathlib import Path
 from venv import EnvBuilder as BaseEnvBuilder

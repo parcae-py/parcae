@@ -67,8 +67,7 @@ def Option(
     path_type: Union[None, Type[str], Type[bytes]] = None,
     # Rich settings
     rich_help_panel: Union[str, None] = None,
-) -> Any:
-    ...
+) -> Any: ...
 
 
 @overload
@@ -130,8 +129,7 @@ def Option(
     path_type: Union[None, Type[str], Type[bytes]] = None,
     # Rich settings
     rich_help_panel: Union[str, None] = None,
-) -> Any:
-    ...
+) -> Any: ...
 
 
 def Option(
@@ -301,8 +299,7 @@ def Argument(
     path_type: Union[None, Type[str], Type[bytes]] = None,
     # Rich settings
     rich_help_panel: Union[str, None] = None,
-) -> Any:
-    ...
+) -> Any: ...
 
 
 @overload
@@ -355,8 +352,7 @@ def Argument(
     path_type: Union[None, Type[str], Type[bytes]] = None,
     # Rich settings
     rich_help_panel: Union[str, None] = None,
-) -> Any:
-    ...
+) -> Any: ...
 
 
 def Argument(
